@@ -1085,7 +1085,7 @@ newtype In6Addr = In6Addr HostAddress6
 
 instance Storable In6Addr where
     sizeOf _    = #const sizeof(struct in6_addr)
-    alignment _ = #alignment struct in6_addr
+    alignment _ = 16
 
     peek p = do
         a <- peek32 p 0
